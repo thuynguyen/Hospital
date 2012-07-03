@@ -1,0 +1,50 @@
+<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= post.text %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<nav>
+  <ul>
+    <li><a href='/carrots'>Carrots</a></li>
+    <li><a href='/pineapples'>Pineapples</a></li>
+    <li><a href='/ginger'>Ginger</a></li>
+  </ul>
+</nav>
+<div class="block">
+  <%= secondary_navigation do |n|
+    n.item "The Company","#", :active => true
+    n.item "Our Offices","#"
+    n.item "Jobs","#", :class => "highlighted"
+  end %>
+  <div class="content">
+    <h2>About Us</h2>
+    <div class="inner">
+      <p>We're an amazing company! We do things!</p>
+      <p>To find out more, click the tabs above.</p>
+    </div>
+  </div>
+</div>
+<%=image_tag("bnt_edit.png")%>
+<%= link_to 'New Post', new_post_path %>

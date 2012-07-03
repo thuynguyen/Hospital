@@ -1,0 +1,47 @@
+@mixin rounded-corners($radius) 
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius                                                                                                                 
+  border-radius: $radius
+
+@mixin linear-gradient($from, $to) 
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to))
+  background-image: -webkit-linear-gradient(top, $from, $to)
+  background-image:    -moz-linear-gradient(top, $from, $to)
+  background-image:     -ms-linear-gradient(top, $from, $to)
+  background-image:      -o-linear-gradient(top, $from, $to)
+
+
+@mixin button-style($base-color) 
+  background-color: $base-color
+  font-size: 1.1em
+  font-weight: bold
+  color: #fff
+  padding: 4px 16px
+  text-decoration: none
+  border: 2px solid darken(#FFF, 10%)
+  @include rounded-corners(7px)
+  @include linear-gradient(lighten($base-color, 10%), $base-color)
+  
+  
+  &:hover 
+    @include linear-gradient($base-color, lighten($base-color, 10%))
+                                                                                                  
+
+
+
+
+nav 
+  ul  
+    list-style-type: none
+    padding-left: 0   
+
+    li 
+      float: left
+      padding: 0 5px    
+
+      a 
+        @include button-style(#A2D972)
+  
+
+  
+
