@@ -21,7 +21,8 @@ group :assets do
 end
 gem 'activeadmin'
 gem 'jquery-rails'
-
+gem 'paperclip'
+gem 'rmagick'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -36,3 +37,4 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
